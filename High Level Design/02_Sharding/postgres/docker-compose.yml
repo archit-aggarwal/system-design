@@ -1,0 +1,36 @@
+networks:
+  postgres:
+    driver: bridge
+
+services:
+  shard1:
+    image: postgres
+    container_name: shard1
+    networks:
+      - postgres
+    environment:
+      POSTGRES_USER: postgres_admin
+      POSTGRES_PASSWORD: postgres_admin
+      POSTGRES_DB: shard1_db
+    volumes:
+      - shard1_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+
+  shard2:
+    image: postgres
+    container_name: shard2
+    networks:
+      - postgres
+    environment:
+      POSTGRES_USER: postgres_admin
+      POSTGRES_PASSWORD: postgres_admin
+      POSTGRES_DB: shard2_db
+    volumes:
+      - shard2_data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+
+volumes:
+  shard1_data:
+  shard2_data:
