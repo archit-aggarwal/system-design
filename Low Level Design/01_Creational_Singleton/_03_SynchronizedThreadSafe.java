@@ -23,7 +23,8 @@ public class _03_SynchronizedThreadSafe extends Thread {
     @Override
     public void run() {
       Logger logger = Logger.getInstance();
-      logger.log("Logging From Thread : " + Thread.currentThread());
+      logger.log("Logging From Thread : " 
+          + Thread.currentThread());
     }
   
     public static void main(String[] args){
@@ -36,13 +37,10 @@ public class _03_SynchronizedThreadSafe extends Thread {
        Thread t7 = new _03_SynchronizedThreadSafe();
        Thread t8 = new _03_SynchronizedThreadSafe();
        
-       t1.start();
-       t2.start();
-       t3.start();
-       t4.start();
-       t5.start();
-       t6.start();
-       t7.start();
-       t8.start();
+       t1.start();  t2.start(); t3.start();
+       t4.start();  t5.start(); t6.start();
+       t7.start();  t8.start();
     }
 }
+
+

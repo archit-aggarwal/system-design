@@ -1,6 +1,6 @@
 /**
  * Lazy initialization mean application will create the instance when it is requested.
- * However, this can be used when you have non-thread-safe application. 
+However, this can be used when you have non-thread-safe application. 
  * If used in multi threaded applications, it might break.
  * Why? - Because getInstance() might get invoked by two threads concurrently
  * and both will create different instances
@@ -48,3 +48,6 @@ public class _02_LazyInitialization extends Thread {
      t8.start();
   }
 }
+
+
+

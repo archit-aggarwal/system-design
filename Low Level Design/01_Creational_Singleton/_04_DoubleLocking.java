@@ -6,9 +6,15 @@ import java.io.Serializable;
 import java.lang.reflect.Constructor;
 
 /**
- * To avoid delays/latencies, we can remove synchronization at method level and introduce it at block level. However, now instance null check needs to be made two times, once before acquiring the lock, and once within the synchronized block, as context switch between threads can happen at any time.
- * Drawback -> Singleton can still break if there is serialization/deserialization done
-  or if private constructor is accessed using reflection API
+ * To avoid delays/latencies, we can remove synchronization 
+ * at method level and introduce it at block 
+ * level. However, now instance null check needs to 
+ * be made two times, once before acquiring the lock, 
+ * and once within the synchronized block, as context 
+ * switch between threads can happen at any time.
+ * Drawback -> Singleton can still break if 
+ * there is serialization/deserialization done 
+ * or if private constructor is accessed using reflection API
  * NOTE -> Serializability Safety can be resolved by adding 
  * protected Object readResolve() {
         return instance;
@@ -53,14 +59,9 @@ public class _04_DoubleLocking extends Thread {
      Thread t7 = new _04_DoubleLocking();
      Thread t8 = new _04_DoubleLocking();
      
-     t1.start();
-     t2.start();
-     t3.start();
-     t4.start();
-     t5.start();
-     t6.start();
-     t7.start();
-     t8.start();
+     t1.start(); t2.start(); t3.start();
+     t4.start(); t5.start(); t6.start();
+     t7.start(); t8.start();
   }
 
   public static void serializableSafety() throws Exception{

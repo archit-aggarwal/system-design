@@ -15,14 +15,16 @@ enum Logger {
   INSTANCE;
 
   public void log(String message) {
-    System.out.println(this + " @ " + this.hashCode() + " : " + message);
+    System.out.println(this + " @ " 
+        + this.hashCode() + " : " + message);
   }
 }
 
 public class _05_SingletonEnum extends Thread {
   @Override
   public void run() {
-    Logger.INSTANCE.log("Logging From Thread : " + Thread.currentThread());
+    Logger.INSTANCE.log("Logging From Thread : " 
+        + Thread.currentThread());
   }
 
   public static void threadSafety() {
@@ -35,14 +37,9 @@ public class _05_SingletonEnum extends Thread {
     Thread t7 = new _05_SingletonEnum();
     Thread t8 = new _05_SingletonEnum();
     
-    t1.start();
-    t2.start();
-    t3.start();
-    t4.start();
-    t5.start();
-    t6.start();
-    t7.start();
-    t8.start();
+    t1.start(); t2.start(); t3.start();
+    t4.start(); t5.start(); t6.start();
+    t7.start(); t8.start();
   }
 
   public static void serializableSafety() throws Exception{
