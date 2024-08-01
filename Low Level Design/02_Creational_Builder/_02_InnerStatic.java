@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class _02_Solution1 {
+public class _02_InnerStatic {
   public static void main(String[] args) {
     HttpRequest request1 = new HttpRequest
       .HttpRequestBuilder("GET", "http://localhost:8080/users")

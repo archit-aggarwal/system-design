@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class _03_Solution2 {
+public class _03_Director {
   public static void main(String[] args) {
     Director director = new Director();
 
