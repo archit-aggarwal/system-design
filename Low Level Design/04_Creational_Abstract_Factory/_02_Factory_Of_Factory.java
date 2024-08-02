@@ -121,7 +121,7 @@ class RedisDB implements DBConnection {
   }
 }
 
-public class _02_Solution {
+public class _02_Factory_Of_Factory {
   public static void main(String[] args) {
     DataFormatFactory dataFormatFactory = new HTMLFormatFactory();
     DBConnectionFactory dbConnectionFactory = new PostgresDBFactory();
