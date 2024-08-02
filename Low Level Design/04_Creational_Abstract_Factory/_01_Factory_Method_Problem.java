@@ -77,7 +77,7 @@ class RedisDB implements DBConnection {
 }
 
 
-public class _01_Problem {
+public class _01_Factory_Method_Problem {
   public static void main(String[] args){
     DBFactory factory1 = new HTMLToMongoFactory();
     factory1.readAndSave();
@@ -86,6 +86,3 @@ public class _01_Problem {
     factory2.readAndSave();
   }
 }
-
-
-
