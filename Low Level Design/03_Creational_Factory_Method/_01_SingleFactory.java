@@ -28,7 +28,8 @@ class JavaFile extends File {
 
   @Override
   public void read() {
-    System.out.println("Reading Java File Content : " + this.content);
+    System.out.println("Reading Java File"
+      + " Content : " + this.content);
   }
 }
 
@@ -39,7 +40,8 @@ class CPPFile extends File {
 
   @Override
   public void read() {
-    System.out.println("Reading C++ File Content : " + this.content);
+    System.out.println("Reading C++ File " 
+      + "Content : " + this.content);
   }
 }
 
@@ -50,7 +52,8 @@ class JSFile extends File {
 
   @Override
   public void read() {
-    System.out.println("Reading Javascript Content : " + this.content);
+    System.out.println("Reading Javascript " 
+      + "Content : " + this.content);
   }
 }
 
@@ -68,3 +71,4 @@ public class _01_SingleFactory {
     javascript.read();
   }
 }
+

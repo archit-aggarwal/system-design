@@ -14,7 +14,7 @@ class NotificationFactory {
   public Notification getNotification(NotificationType notificationType) {
     Notification prototype = notificationDB.get(notificationType);
     if(prototype == null) return null;
-    return prototype.clone(); // to ensure different objects are returned every time
+    return prototype.clone(); // ensures different objects returned every time
   }
 }
 
@@ -68,7 +68,8 @@ class PushNotification implements Notification {
 
   @Override
   public void send(String message) {
-      System.out.println("Push Notification with Message : " + message);
+      System.out.println("Push Notification with "
+         + "Message : " + message);
   }
   
   @Override
@@ -95,3 +96,5 @@ public class _02_Single_Factory_Prototype {
     push.send("Good Evening");
   }
 }
+
+
