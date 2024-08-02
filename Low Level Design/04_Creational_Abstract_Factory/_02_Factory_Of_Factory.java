@@ -3,19 +3,16 @@ class DBFactory {
   private DataFormatFactory dataFormatFactory;
   private DBConnectionFactory dbConnectionFactory;
 
-  public DBFactory(DataFormatFactory dataFormatFactory, 
-        DBConnectionFactory dbConnectionFactory) {
+  public DBFactory(DataFormatFactory dataFormatFactory, DBConnectionFactory dbConnectionFactory) {
     this.dataFormatFactory = dataFormatFactory;
     this.dbConnectionFactory = dbConnectionFactory;
   }
 
   public void readAndSave() {
-    DataFormat dataFormat = 
-      dataFormatFactory.createDataFormat();
+    DataFormat dataFormat = dataFormatFactory.createDataFormat();
     dataFormat.read();
 
-    DBConnection dbConnection = 
-      dbConnectionFactory.createDBConnection();
+    DBConnection dbConnection = dbConnectionFactory.createDBConnection();
     dbConnection.save();
   }
 }
@@ -134,3 +131,5 @@ public class _02_Factory_Of_Factory {
     dbFactory.readAndSave();
   }
 }
+
+
