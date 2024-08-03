@@ -14,7 +14,8 @@ public class _04_Deep_Copy_Serializable {
     languages.add("Java"); languages.add("C++");
 
     Employee employee1 = new 
-      Developer("Archit", "Aggarwal", "SDE", address, languages);
+      Developer("Archit", "Aggarwal", 
+          "SDE", address, languages);
 
     // Deep copy using serialization
     Employee employee2 = deepCopy(employee1);
@@ -41,7 +42,8 @@ public class _04_Deep_Copy_Serializable {
       out.writeObject(object);
       
       // Deserialize the object
-      ByteArrayInputStream byteIn = new ByteArrayInputStream(byteOut.toByteArray());
+      ByteArrayInputStream byteIn = 
+          new ByteArrayInputStream(byteOut.toByteArray());
       ObjectInputStream in = new ObjectInputStream(byteIn);
       return (T) in.readObject();
     } catch (IOException | ClassNotFoundException e) {

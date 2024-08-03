@@ -7,7 +7,8 @@ public class _03_Deep_Copy_Prototype {
     languages.add("Java"); languages.add("C++");
 
     Employee employee1 = new 
-      Developer("Archit", "Aggarwal", "SDE", address, languages);
+      Developer("Archit", "Aggarwal", 
+            "SDE", address, languages);
     Employee employee2 = (Employee) employee1.clone();
 
     System.out.println(employee1.hashCode() + " @ " + employee1);
@@ -49,8 +50,10 @@ abstract class Employee implements Cloneable {
   @Override
   protected Object clone() 
     throws CloneNotSupportedException {
-    Employee cloned = (Employee) super.clone(); // object clone call
-    cloned.address = (Address) address.clone(); // Deep copy of address
+    Employee cloned = (Employee) super.clone(); 
+    // object clone call
+    cloned.address = (Address) address.clone(); 
+    // Deep copy of address
     return cloned;
   }
 }
@@ -78,8 +81,10 @@ class Developer extends Employee {
 
   @Override
   protected Object clone() throws CloneNotSupportedException {
-      Developer cloned = (Developer) super.clone(); // employee clone call
-      cloned.languages = new ArrayList<>(this.languages); // Deep copy of languages
+      Developer cloned = (Developer) super.clone(); 
+      // employee clone call
+      cloned.languages = new ArrayList<>(this.languages); 
+      // Deep copy of languages
       return cloned;
   }
 }
