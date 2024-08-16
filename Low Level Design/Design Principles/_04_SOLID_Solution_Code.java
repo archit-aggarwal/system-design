@@ -33,18 +33,20 @@ class UserSubscriptionService implements IUserSubscriptionService {
   public void subscribe(User user, Subscription subscription) {
     if(user == null || subscription == null) return;
     subscription.subscribe(user);
+    UserRepository.getInstance().saveUserInDB(user);
   }
 }
 
-class UserController{
+class UserRepository{
   HashMap<String, User> usersEmailMap, usersPhoneMap;
 
-  static UserController singleton = new UserController();
-  private UserController() {
+  static UserRepository singleton = new UserRepository();
+
+  private UserRepository() {
     usersEmailMap = new HashMap<>();
     usersPhoneMap = new HashMap<>();
   }
-  public static UserController getInstance(){
+  public static UserRepository getInstance(){
     return singleton;
   }
 
@@ -136,8 +138,8 @@ class EmailAuthentication extends Authentication {
   }
 
   public boolean authenticate(){
-    UserController controller = UserController.getInstance();
-    User user = controller.getUserByEmailFromDB(this.getEmailId());
+    UserRepository repository = UserRepository.getInstance();
+    User user = repository.getUserByEmailFromDB(this.getEmailId());
     if(user == null) return false;
     return user.getPassword().equals(this.getPassword());
   }
@@ -160,8 +162,8 @@ class PhoneAuthentication extends Authentication {
   }
 
   public boolean authenticate(){
-    UserController controller = UserController.getInstance();
-    User user = controller.getUserByPhoneFromDB(this.getPhoneNo());
+    UserRepository repository = UserRepository.getInstance();
+    User user = repository.getUserByPhoneFromDB(this.getPhoneNo());
     if(user == null) return false;
     return user.getPassword().equals(this.getPassword());
   }
