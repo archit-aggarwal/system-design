@@ -51,7 +51,6 @@ class UserService implements IUserService {
   public User saveUserInDB(User user) {
     usersEmailMap.put(user.getEmailId(), user);
     usersPhoneMap.put(user.getPhoneNo(), user);
-
     if(user.getEmailId() != null) return usersEmailMap.get(user.getEmailId());
     else return usersPhoneMap.get(user.getPhoneNo());
   }
@@ -120,78 +119,36 @@ class User {
   private String password;
   private Subscription subscription;
 
-  public Subscription getSubscription() {
-    return subscription;
-  }
+  public Subscription getSubscription() { return subscription; }
   public void setSubscription(Subscription subscription) {
     this.subscription = subscription;
   }
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-  public String getEmailId() {
-    return emailId;
-  }
-  public void setEmailId(String emailId) {
-    this.emailId = emailId;
-  }
-  public String getPhoneNo() {
-    return phoneNo;
-  }
-  public void setPhoneNo(String phoneNo) {
-    this.phoneNo = phoneNo;
-  }
-  public String getPassword() {
-    return password;
-  }
-  public void setPassword(String password) {
-    this.password = password;
-  }
+  public String getName() { return name; }
+  public void setName(String name) { this.name = name; }
+  public String getEmailId() { return emailId; }
+  public void setEmailId(String emailId) { this.emailId = emailId; }
+  public String getPhoneNo() { return phoneNo; }
+  public void setPhoneNo(String phoneNo) { this.phoneNo = phoneNo; }
+  public String getPassword() { return password; }
+  public void setPassword(String password) { this.password = password; }
 }
 
 class EmailAuthentication {
   private String emailId;
   private String password;
 
-  public EmailAuthentication(String emailId, String password) {
-    this.emailId = emailId;
-    this.password = password;
-  }
-  public String getEmailId() {
-    return emailId;
-  }
-  public void setEmailId(String emailId) {
-    this.emailId = emailId;
-  }
-  public String getPassword() {
-    return password;
-  }
-  public void setPassword(String password) {
-    this.password = password;
-  }
+  public String getEmailId() { return emailId; }
+  public void setEmailId(String emailId) { this.emailId = emailId; }
+  public String getPassword() { return password; }
+  public void setPassword(String password) { this.password = password; }
 }
 
 class MobileAuthentication {
   private String phoneNo;
   private String password;
 
-  public MobileAuthentication(String phoneNo , String password) {
-    this.phoneNo = phoneNo; 
-    this.password = password;
-  }
-  public String getPhoneNo() {
-    return phoneNo;
-  }
-  public void setPhoneNo(String phoneNo) {
-    this.phoneNo = phoneNo;
-  }
-  public String getPassword() {
-    return password;
-  }
-  public void setPassword(String password) {
-    this.password = password;
-  }
+  public String getPhoneNo() { return phoneNo; }
+  public void setPhoneNo(String phoneNo) { this.phoneNo = phoneNo; }
+  public String getPassword() { return password; }
+  public void setPassword(String password) { this.password = password; }
 }

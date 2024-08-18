@@ -2,7 +2,8 @@ import java.time.LocalDate;
 import java.util.HashMap;
 
 public class _04_SOLID_Solution_Code {
-  public static void main(String[] args) {   
+  public static void main(String[] args) { 
+     
   }  
 }
 
@@ -71,33 +72,15 @@ class User {
   private String password;
   private Subscription subscription;
 
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-  public String getEmailId() {
-    return emailId;
-  }
-  public void setEmailId(String emailId) {
-    this.emailId = emailId;
-  }
-  public String getPhoneNo() {
-    return phoneNo;
-  }
-  public void setPhoneNo(String phoneNo) {
-    this.phoneNo = phoneNo;
-  }
-  public String getPassword() {
-    return password;
-  }
-  public void setPassword(String password) {
-    this.password = password;
-  }
-  public Subscription getSubscription() {
-    return subscription;
-  }
+  public String getName() { return name; }
+  public void setName(String name) { this.name = name; }
+  public String getEmailId() { return emailId; }
+  public void setEmailId(String emailId) { this.emailId = emailId; }
+  public String getPhoneNo() { return phoneNo; }
+  public void setPhoneNo(String phoneNo) { this.phoneNo = phoneNo; }
+  public String getPassword() { return password; }
+  public void setPassword(String password) { this.password = password; }
+  public Subscription getSubscription() { return subscription; }
   public void setSubscription(Subscription subscription) {
     this.subscription = subscription;
   }
@@ -106,32 +89,17 @@ class User {
 abstract class Authentication {
   String password;
   
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-  public Authentication(String password){
-    this.password = password;
-  }
-
+  public String getPassword() { return password; }
+  public void setPassword(String password) { this.password = password; }
+  public Authentication(String password){ this.password = password; }
   public abstract boolean authenticate();
 }
 
 class EmailAuthentication extends Authentication {
   String emailId;
 
-  public String getEmailId() {
-    return emailId;
-  }
-
-  public void setEmailId(String emailId) {
-    this.emailId = emailId;
-  }
-
+  public String getEmailId() { return emailId; }
+  public void setEmailId(String emailId) { this.emailId = emailId; }
   public EmailAuthentication(String emailId, String password){
     super(password);
     this.emailId = emailId;
@@ -148,14 +116,8 @@ class EmailAuthentication extends Authentication {
 class PhoneAuthentication extends Authentication {
   String phoneNo;
 
-  public String getPhoneNo() {
-    return phoneNo;
-  }
-
-  public void setPhoneNo(String phoneNo) {
-    this.phoneNo = phoneNo;
-  }
-
+  public String getPhoneNo() { return phoneNo; }
+  public void setPhoneNo(String phoneNo) { this.phoneNo = phoneNo; }
   public PhoneAuthentication(String phoneNo, String password){
     super(password);
     this.phoneNo = phoneNo;
@@ -177,20 +139,13 @@ interface Subscription {
 abstract class LimitedSubscription implements Subscription {
   private LocalDate subscriptionEndDate;
 
-  public LocalDate getSubscriptionEndDate() {
-    return subscriptionEndDate;
-  }
-  public void setSubscriptionEndDate(LocalDate subscriptionEndDate) {
-    this.subscriptionEndDate = subscriptionEndDate;
-  }
-
+  public LocalDate getSubscriptionEndDate() { return subscriptionEndDate; }
+  public void setSubscriptionEndDate(LocalDate subscriptionEndDate) 
+  { this.subscriptionEndDate = subscriptionEndDate; }
   public abstract void subscribe(User user);
-
   public abstract String getSubscriptionStatus();
-
-  public boolean isActive(){
-    return !(this.getSubscriptionEndDate().isBefore(LocalDate.now()));
-  }
+  public boolean isActive()
+  { return !(this.getSubscriptionEndDate().isBefore(LocalDate.now())); }
 }
 
 class MonthlySubscription extends LimitedSubscription {
