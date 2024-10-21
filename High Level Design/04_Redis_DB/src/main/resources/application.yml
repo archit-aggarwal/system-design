@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: app
+  redis:
+    host: localhost
+    port: 6379
+  output:
+    ansi:
+      enabled: ALWAYS

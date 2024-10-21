@@ -1,0 +1,12 @@
+# to start postgres container, run command : "docker-compose up -d"
+services:
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
