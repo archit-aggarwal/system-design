@@ -4,6 +4,9 @@ spring:
   redis:
     host: localhost
     port: 6379
+  cache:
+    redis:
+      time-to-live: 15000
   datasource:
     url: jdbc:postgresql://localhost:5433/postgres_db
     username: postgres
