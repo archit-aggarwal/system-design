@@ -1,6 +1,7 @@
 package spring.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.web.bind.annotation.*;
 import spring.app.model.User;
 import spring.app.service.UserService;
@@ -9,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
+@CacheConfig(cacheNames = "users")
 public class UserController {
     UserService userService;
 
