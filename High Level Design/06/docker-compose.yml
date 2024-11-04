@@ -1,0 +1,16 @@
+# to start postgres container, run command : "docker-compose up -d"
+services:
+  postgres_db:
+    image: postgres
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: postgres_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
