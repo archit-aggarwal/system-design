@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("all")
 public class _04_Deep_Copy_Serializable {
   public static void main(String[] args) throws Exception{
     Address address = new Address("Bangalore", "Karnataka");

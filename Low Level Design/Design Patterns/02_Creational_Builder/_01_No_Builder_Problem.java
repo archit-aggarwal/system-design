@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class _01_Problem {
+public class _01_No_Builder_Problem {
   public static void main(String[] args) {
     HttpRequest request1 = new HttpRequest("GET", "http://localhost:8080/users");
 

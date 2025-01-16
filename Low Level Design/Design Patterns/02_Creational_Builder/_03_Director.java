@@ -11,7 +11,7 @@ public class _03_Director {
     HttpRequest getRequest = getRequestBuilder.build();
     System.out.println(getRequest);
 
-    Builder postRequestBuilder = new HttpPostRequestBuilder();
+    HttpPostRequestBuilder postRequestBuilder = new HttpPostRequestBuilder();
     postRequestBuilder.setBody("{\"key\":\"value\"}");
     director.setBuilder(postRequestBuilder);
     director.build("https://api.example.com/post");
