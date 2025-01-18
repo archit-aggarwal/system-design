@@ -64,7 +64,7 @@ class OneRupeeCoinDispenser extends DispenseChain {
   }
 }
 
-public class _01_COR_Example_1 {
+public class _02_COR_Solution {
   private static DispenseChain getATMDispenseChain() {
     DispenseChain chain = new TenRupeesCoinDispenser();
     chain.setNextChain(new FiveRupeesCoinDispenser());

@@ -62,7 +62,7 @@ class Dream11 implements Subscriber {
   }
 }
 
-public class _01_Observer_Example_1 {
+public class _02_Observer_Solution {
     public static void main(String[] args) {
         // Create the broadcaster (publisher)
         Hotstar broadcaster = new Hotstar();
