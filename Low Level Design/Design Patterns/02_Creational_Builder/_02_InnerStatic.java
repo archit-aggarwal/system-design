@@ -53,7 +53,7 @@ class HttpRequest {
         + body + ",headers=" + headers + ", timeout=" + timeout + "]";
   }
 
-  public static class HttpRequestBuilder {
+  static class HttpRequestBuilder {
     // Required parameters
     private final String method;
     private final String url;
