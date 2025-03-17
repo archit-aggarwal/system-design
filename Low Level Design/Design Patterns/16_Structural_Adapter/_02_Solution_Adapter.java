@@ -3,12 +3,12 @@ interface PaymentProcessor {
   void pay(Account account, double amount);
 }
 
-// Existing Payment Gateway (Stripe)
+// Existing Payment Gateway (Paytm)
 class PaytmPayment implements PaymentProcessor {
   @Override
   public void pay(Account account, double amount) {
       System.out.println("Payment of ₹" + amount 
-        + " made via Stripe for account id: " + account.id);
+        + " made via Paytm for account id: " + account.id);
   }
 }
 

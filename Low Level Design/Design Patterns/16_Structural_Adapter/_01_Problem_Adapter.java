@@ -3,12 +3,12 @@ interface PaymentProcessor {
   void pay(Account account, double amount);
 }
 
-// Existing Payment Gateway (Stripe)
+// Existing Payment Gateway (Paytm)
 class PaytmPayment implements PaymentProcessor {
   @Override
   public void pay(Account account, double amount) {
       System.out.println("Payment of ₹" + amount 
-        + " made via Stripe for account id: " + account.id);
+        + " made via Paytm for account id: " + account.id);
   }
 }
 
@@ -32,8 +32,8 @@ class Account {
 public class _01_Problem_Adapter {
   public static void main(String[] args) {
     Account acc = new Account("userId1", "user@gmail.com");
-    PaymentProcessor stripe = new PaytmPayment();
-    stripe.pay(acc, 50.0); // Works fine
+    PaymentProcessor paytm = new PaytmPayment();
+    paytm.pay(acc, 50.0); // Works fine
 
     // ❌ PROBLEM: PayPal has a different method signature
     // PayPalAPI paypal = new PayPalAPI();
