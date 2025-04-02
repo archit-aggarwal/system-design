@@ -34,7 +34,7 @@ public class Game extends Thread {
             Player turn = playerQueue.remove();
             System.out.println(gameColor + "Turn of Player [" + turn.getName() + "] with Piece [" + turn.getPiece() + "]");
 
-            PlayerState state = board.makeMove(turn, gameColor);
+            PlayerState state = board.makeMove(turn.getPiece(), gameColor);
             if (state == PlayerState.WIN) {
                 System.out.println(gameColor + "Player " + turn.getName() + " Wins in Game [" + gameId + "]");
                 return;

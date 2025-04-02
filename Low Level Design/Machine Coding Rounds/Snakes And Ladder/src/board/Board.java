@@ -3,7 +3,6 @@ package board;
 import dice.Dice;
 import element.Element;
 import piece.Piece;
-import player.Player;
 import player.PlayerState;
 import java.util.HashMap;
 import java.util.List;
@@ -24,8 +23,7 @@ public class Board {
         }
     }
 
-    public PlayerState makeMove(Player player, String gameColor) {
-        Piece piece = player.getPiece();
+    public PlayerState makeMove(Piece piece, String gameColor) {
         if(piece.getPosition() + dice.getCountOfDices() > size) return PlayerState.LOSE;
 
         int diceRoll = dice.rollDice();
