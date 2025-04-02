@@ -1,6 +1,7 @@
 package board;
 
 import player.Player;
+import player.PlayerState;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -31,14 +32,18 @@ public class Game extends Thread {
 
         while (true) {
             Player turn = playerQueue.remove();
-            System.out.println(gameColor + "Turn of Player [" + turn.getName() + "] with Piece [" + turn.getPiece().getColor() + "]");
+            System.out.println(gameColor + "Turn of Player [" + turn.getName() + "] with Piece [" + turn.getPiece() + "]");
 
-            if (board.makeMove(turn, gameColor)) {
+            PlayerState state = board.makeMove(turn, gameColor);
+            if (state == PlayerState.WIN) {
                 System.out.println(gameColor + "Player " + turn.getName() + " Wins in Game [" + gameId + "]");
                 return;
             }
-
-            playerQueue.add(turn);
+            else if(state == PlayerState.LOSE) {
+                System.out.println(gameColor + "Player " + turn.getName() + " Loses in Game [" + gameId + "]");
+                if(playerQueue.isEmpty()) System.out.println(gameColor + " Ends in a Draw !");
+            }
+            else playerQueue.add(turn);
         }
     }
 }

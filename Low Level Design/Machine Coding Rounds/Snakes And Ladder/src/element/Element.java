@@ -1,7 +1,5 @@
 package element;
 
-import player.Player;
-
 public abstract class Element {
     private final int start, end;
 
@@ -12,5 +10,5 @@ public abstract class Element {
 
     public int getEnd() { return end; }
     public int getStart() { return start; }
-    public abstract int useElement(Player player);
+    public abstract int useElement();
 }

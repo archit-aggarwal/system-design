@@ -13,10 +13,12 @@ public class Dice {
     public int rollDice() {
         int total = 0;
         for(int dice = 1; dice <= countOfDices; dice++) {
-            int value = random.nextInt(7);
+            int value = random.nextInt(1,7);
             total += value;
         }
 
         return total;
     }
+
+    public int getCountOfDices() {return countOfDices; }
 }

@@ -23,9 +23,11 @@ public class Main {
 
             System.out.println("Enter Board Size Details for Game [" + gameId + "] : ");
             int boardSize = scn.nextInt();
+            if(boardSize <= 0) continue;
 
             System.out.println("Enter Number of Dices to Use : ");
             int countOfDices = scn.nextInt();
+            if(countOfDices <= 0 || countOfDices > boardSize) continue;
 
             List<Element> elements = new ArrayList<>();
             System.out.println("Enter Count of Snakes & Ladders : ");
@@ -54,7 +56,6 @@ public class Main {
             }
 
             if(players.size() <= 1) continue;
-
             Board board = new Board(boardSize, elements, new Dice(countOfDices));
             games.add(new Game(gameId, board, players));
         }

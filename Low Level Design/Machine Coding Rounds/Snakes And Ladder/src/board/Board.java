@@ -4,6 +4,7 @@ import dice.Dice;
 import element.Element;
 import piece.Piece;
 import player.Player;
+import player.PlayerState;
 import java.util.HashMap;
 import java.util.List;
 
@@ -23,24 +24,24 @@ public class Board {
         }
     }
 
-    public boolean makeMove(Player player, String gameColor) {
+    public PlayerState makeMove(Player player, String gameColor) {
         Piece piece = player.getPiece();
+        if(piece.getPosition() + dice.getCountOfDices() > size) return PlayerState.LOSE;
+
         int diceRoll = dice.rollDice();
         System.out.println(gameColor + "Rolling Dice(s) : Total = " + diceRoll);
         int destination = piece.getPosition() + diceRoll;
 
         if (destination > size) {
-            System.out.println(gameColor + "Player [" + player.getName() + "] can't move to [" + destination + "] cell as it is out of board");
-            return false;
+            System.out.println(gameColor + "Can't move to [" + destination + "] cell");
         }
-
-        if (elements.containsKey(destination))
-            piece.setPosition(elements.get(destination).useElement(player));
+        else if (elements.containsKey(destination))
+            piece.setPosition(elements.get(destination).useElement());
         else {
-            System.out.println(gameColor + "Player [" + player.getName() + "] moved to [" + destination + "] cell");
+            System.out.println(gameColor + "Moved Piece to [" + destination + "] cell");
             piece.setPosition(destination);
         }
 
-        return (piece.getPosition() == size);
+        return (piece.getPosition() == size) ? PlayerState.WIN : PlayerState.NO_RESULT;
     }
 }
