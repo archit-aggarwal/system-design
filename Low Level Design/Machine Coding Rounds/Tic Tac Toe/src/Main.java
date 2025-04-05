@@ -1,5 +1,4 @@
 import board.Game;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 // javac -d out src/*.java && java -cp out Main
@@ -17,14 +16,11 @@ public class Main {
                 System.out.print("Enter Board Size [>= Total Players] : ");
                 boardSize = scanner.nextInt();
                 if (boardSize >= totalPlayers) break;
-                else throw new Exception("Board Size Can't Be Less Than Players");
-            }
-            catch (InputMismatchException ime) {
-                System.out.println("Invalid input, please enter a valid number. Try again!");
-                scanner.nextLine(); // Consume the invalid input to prevent infinite loop
+                throw new Exception("Board Size Can't Be Less Than Players");
             }
             catch (Exception e) {
-                System.out.println(e.getMessage() + ", Please Try Again !");
+                System.out.println("Error : " + e.getMessage() + ", Please Try Again !");
+                scanner.nextLine(); // Consume the invalid input to prevent infinite loop
             }
         }
 
