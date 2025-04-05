@@ -3,7 +3,7 @@ package board;
 import evaluator.DrawEvaluator;
 import evaluator.WinEvaluator;
 import move.Move;
-import piece.Piece;
+import player.Piece;
 
 public class Board {
     private final int size;

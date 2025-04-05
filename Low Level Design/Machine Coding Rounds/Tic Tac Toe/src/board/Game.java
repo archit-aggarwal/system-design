@@ -5,11 +5,11 @@ import player.PlayerFactory;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BoardManager {
+public class Game {
     private final Board board;
     private final Queue<Player> playerQueue = new LinkedList<>();
 
-    public BoardManager(int boardSize, int totalPlayers) {
+    public Game(int boardSize, int totalPlayers) {
         this.board = new Board(boardSize);
 
         PlayerFactory playerFactory = new PlayerFactory();

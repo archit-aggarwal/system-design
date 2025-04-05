@@ -1,7 +1,7 @@
 package evaluator;
 
 import board.Board;
-import piece.Piece;
+import player.Piece;
 
 public class RowEvaluator implements BoardEvaluator {
     private static final RowEvaluator INSTANCE = new RowEvaluator();

@@ -1,7 +1,5 @@
 package player;
 
-import piece.Piece;
-import piece.PieceFactory;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;

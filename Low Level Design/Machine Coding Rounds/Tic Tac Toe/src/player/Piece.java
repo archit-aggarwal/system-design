@@ -1,4 +1,4 @@
-package piece;
+package player;
 
 import java.util.Objects;
 

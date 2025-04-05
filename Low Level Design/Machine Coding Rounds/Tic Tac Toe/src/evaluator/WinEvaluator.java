@@ -1,7 +1,7 @@
 package evaluator;
 
 import board.Board;
-import piece.Piece;
+import player.Piece;
 import java.util.List;
 
 public class WinEvaluator implements BoardEvaluator {

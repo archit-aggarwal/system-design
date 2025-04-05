@@ -1,7 +1,7 @@
 package evaluator;
 
 import board.Board;
-import piece.Piece;
+import player.Piece;
 
 public interface BoardEvaluator {
     boolean evaluate(Board board, Piece piece);

@@ -1,4 +1,4 @@
-import board.BoardManager;
+import board.Game;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -28,7 +28,7 @@ public class Main {
             }
         }
 
-        BoardManager game = new BoardManager(boardSize, totalPlayers);
+        Game game = new Game(boardSize, totalPlayers);
         game.start();
     }
 }

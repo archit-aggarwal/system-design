@@ -4,7 +4,6 @@ import board.Board;
 import board.BoardState;
 import move.Move;
 import move.MoveStrategy;
-import piece.Piece;
 
 public abstract class Player {
     private final String name;
