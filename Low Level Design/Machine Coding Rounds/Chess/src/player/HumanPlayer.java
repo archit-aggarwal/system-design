@@ -9,7 +9,7 @@ public class HumanPlayer extends Player {
     private final Scanner scanner = new Scanner(System.in);
     public HumanPlayer(String name) { super(name); }
 
-    public Move makeMove(Board board, PieceColor color) {
+    public Move getMove(Board board, PieceColor color) {
         while(true) {
             try {
                 System.out.println("Enter From Row, From Col, To Row, To Col : ");

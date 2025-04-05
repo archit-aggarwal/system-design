@@ -14,5 +14,5 @@ public abstract class Player {
         return name;
     }
 
-    public abstract Move makeMove(Board board, PieceColor color);
+    public abstract Move getMove(Board board, PieceColor color);
 }

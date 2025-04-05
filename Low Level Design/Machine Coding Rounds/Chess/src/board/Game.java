@@ -23,7 +23,7 @@ public class Game {
             Player player  = (turn == PieceColor.WHITE) ? whitePlayer : blackPlayer;
             System.out.println("Player " + player.getName() + "'s turn with " + turn + " pieces.");
 
-            Move move = player.makeMove(board, turn);
+            Move move = player.getMove(board, turn);
             GameState gameState = board.movePiece(move);
 
             if(gameState != GameState.NO_RESULT) {
