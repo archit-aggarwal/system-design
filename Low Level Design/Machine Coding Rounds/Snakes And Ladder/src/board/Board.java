@@ -1,6 +1,5 @@
 package board;
 
-import dice.Dice;
 import element.Element;
 import piece.Piece;
 import player.PlayerState;
@@ -30,9 +29,8 @@ public class Board {
         System.out.println(gameColor + "Rolling Dice(s) : Total = " + diceRoll);
         int destination = piece.getPosition() + diceRoll;
 
-        if (destination > size) {
+        if (destination > size)
             System.out.println(gameColor + "Can't move to [" + destination + "] cell");
-        }
         else if (elements.containsKey(destination))
             piece.setPosition(elements.get(destination).useElement());
         else {

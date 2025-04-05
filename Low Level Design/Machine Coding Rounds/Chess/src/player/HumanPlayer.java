@@ -3,6 +3,8 @@ package player;
 import board.Board;
 import board.Cell;
 import piece.PieceColor;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class HumanPlayer extends Player {
@@ -24,6 +26,10 @@ public class HumanPlayer extends Player {
                 Move move = new Move(from, to, color);
                 if(!move.isValid(board)) throw new RuntimeException("Invalid Move");
                 return move;
+            }
+            catch (InputMismatchException ime) {
+                System.out.println("Invalid input, please enter a valid number. Try again!");
+                scanner.nextLine(); // Consume the invalid input to prevent infinite loop
             }
             catch (RuntimeException e) {
                 System.out.println("Error : " + e.getMessage() + ", Try Again !!");

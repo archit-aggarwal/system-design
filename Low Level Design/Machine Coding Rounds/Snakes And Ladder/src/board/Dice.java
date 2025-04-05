@@ -1,11 +1,10 @@
-package dice;
+package board;
 
 import java.util.Random;
 
 public class Dice {
     private final int countOfDices;
     private final Random random = new Random();
-
     public Dice(int countOfDices) {
         this.countOfDices = countOfDices;
     }

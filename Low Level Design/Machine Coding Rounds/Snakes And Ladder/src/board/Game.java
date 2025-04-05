@@ -15,15 +15,10 @@ public class Game extends Thread {
     public Game(int gameId, Board board, List<Player> players) {
         this.gameId = gameId;
         this.board = board;
-        this.gameColor = this.generateColor(gameId);
         playerQueue.addAll(players);
-    }
 
-    private String generateColor(int id) {
-        int r = (id * 50) % 256;
-        int g = (id * 100) % 256;
-        int b = (id * 150) % 256;
-        return String.format("\u001B[38;2;%d;%d;%dm", r, g, b);
+        int r = (gameId * 50) % 256, g = (gameId * 100) % 256, b = (gameId * 150) % 256;
+        this.gameColor = String.format("\u001B[38;2;%d;%d;%dm", r, g, b);
     }
 
     @Override
