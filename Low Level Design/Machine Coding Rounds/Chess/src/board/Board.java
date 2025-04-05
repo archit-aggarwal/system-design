@@ -51,12 +51,13 @@ public class Board {
         return gameState;
     }
 
-    public void displayBoard() {
+    public void display() {
         for(int row = 1; row <= BOARD_SIZE; row++) {
             for(int col = 1; col <= BOARD_SIZE; col++) {
                 System.out.print(cells[row - 1][col - 1] + " ");
             }
             System.out.println();
+
             for(int col = 1; col <= BOARD_SIZE; col++) {
                 System.out.print("———");
             }

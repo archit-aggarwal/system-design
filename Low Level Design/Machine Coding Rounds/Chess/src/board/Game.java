@@ -18,7 +18,7 @@ public class Game {
         PieceColor turn = PieceColor.WHITE;
 
         while(true) {
-            board.displayBoard();
+            board.display();
 
             Player player  = (turn == PieceColor.WHITE) ? whitePlayer : blackPlayer;
             System.out.println("Player " + player.getName() + "'s turn with " + turn + " pieces.");
